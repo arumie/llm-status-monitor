@@ -1,10 +1,8 @@
 import asyncio
 from typing import Any
-
 from pydantic import UUID4, Json
 from llmstatusmonitor.logger import logger
-
-from llmstatusmonitor.schemas.statusmonitor import Status, Type
+from llmstatusmonitor.schemas.statusmonitor import Status
 from llmstatusmonitor.services.statusmonitor import StatusMonitorService
 
 

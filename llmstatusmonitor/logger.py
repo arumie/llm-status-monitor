@@ -4,7 +4,7 @@ import time
 
 
 def create_logger() -> logging.Logger:
-    
+
     green = "\x1b[32;20m"
     reset = "\x1b[0m"
     logging.basicConfig(

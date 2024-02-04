@@ -1,10 +1,10 @@
 # LLM Status Monitor
 
 ## Description
+
 Project to allow invocation of LLMs with a status monitor using FastApi and Google Firestore
 
 Purpose is for use in serverless functions with low timeout (Ex. a free project using Vercel and NextJS)
-
 
 ## Setup
 
@@ -25,14 +25,19 @@ pip install -r requirement.txt
 ```bash
 ./scripts/run.sh
 ```
-or 
+
+or when wanting to use a Mock Firestore
 
 ```bash
-uvicorn llmstatusmonitor.main:api --reload
+./scripts/runMock.sh
 ```
 
 ## Endpoints
 
 ```
-GET /health
+GET /health -> HealthOutput
+POST /hello -> StatusMonitorOutput
+GET /status-monitor/{id} -> StatusMonitorOutput
 ```
+
+Swagger is available at http://localhost:8000/docs

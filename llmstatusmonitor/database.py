@@ -9,4 +9,3 @@ if configuration.env == 'mock':
 else:
     from google.cloud import firestore
     db = firestore.Client()
-

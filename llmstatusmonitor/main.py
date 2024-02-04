@@ -5,14 +5,14 @@ from typing import Any, Callable
 from fastapi import FastAPI, Request
 
 from llmstatusmonitor import __project_id__, __version__
-from llmstatusmonitor.routers import health, hello_world, statusmonitor
+from llmstatusmonitor.routers import health, hello, statusmonitor
 
 os.environ["TZ"] = "UTC"
 
 #
 #   create the api
 #
-api = FastAPI(title=f"Firestore FastAPI: {__project_id__}", version=__version__)
+api = FastAPI(title=f"LLM Status Monitor: {__project_id__}", version=__version__)
 
 
 #
@@ -32,4 +32,4 @@ async def add_process_time_header(request: Request, call_next: Callable) -> Any:
 #
 api.include_router(health.router)
 api.include_router(statusmonitor.router)
-api.include_router(hello_world.router)
+api.include_router(hello.router)
