@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from pydantic.types import StrictStr
 
 
-class HealthResponse(BaseModel):
+class HealthOutput(BaseModel):
     message: StrictStr
     version: StrictStr
     time: datetime

@@ -5,7 +5,7 @@ from typing import Any, Callable
 from fastapi import FastAPI, Request
 
 from llmstatusmonitor import __project_id__, __version__
-from llmstatusmonitor.routers import health
+from llmstatusmonitor.routers import health, hello_world, statusmonitor
 
 os.environ["TZ"] = "UTC"
 
@@ -31,3 +31,5 @@ async def add_process_time_header(request: Request, call_next: Callable) -> Any:
 #   routers
 #
 api.include_router(health.router)
+api.include_router(statusmonitor.router)
+api.include_router(hello_world.router)

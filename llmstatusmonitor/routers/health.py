@@ -3,17 +3,17 @@ from fastapi import APIRouter
 
 from llmstatusmonitor import __version__
 from llmstatusmonitor.logger import logger
-from llmstatusmonitor.schemas.health import HealthResponse
+from llmstatusmonitor.schemas.health import HealthOutput
 
 
 router = APIRouter()
 
 
-@router.get("/health", response_model=HealthResponse, tags=["health"])
-def healthcheck() -> HealthResponse:
+@router.get("/health", response_model=HealthOutput, tags=["health"])
+def healthcheck() -> HealthOutput:
     message = "running"
     logger.info(message)
-    return HealthResponse(
+    return HealthOutput(
         message=message,
         version=__version__,
         time=datetime.now(),
